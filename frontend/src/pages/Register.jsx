@@ -12,7 +12,7 @@ export default function Register() {
 
   const register = async () => {
     try {
-      await axios.post(`${API}/auth/register`, {
+      await axios.post(`${API}/api/auth/register`, {
         name,
         email,
         password,
