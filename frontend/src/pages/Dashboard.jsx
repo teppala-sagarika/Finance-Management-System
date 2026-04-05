@@ -58,8 +58,8 @@ export default function Dashboard() {
 
   const fetchData = async () => {
     try {
-      const recRes = await axios.get(`${API}/records`, config);
-      const sumRes = await axios.get(`${API}/dashboard/summary`, config);
+      const recRes = await axios.get(`${API}/api/records`, config);
+      const sumRes = await axios.get(`${API}/api/dashboard/summary`, config);
 
       setRecords(recRes.data.data);
       setSummary(sumRes.data.data);
@@ -79,7 +79,7 @@ export default function Dashboard() {
 
   const createRecord = async () => {
     try {
-      await axios.post(`${API}/records`, form, config);
+      await axios.post(`${API}/api/records`, form, config);
       alert("Record added ✅");
       fetchData();
     } catch (err) {
